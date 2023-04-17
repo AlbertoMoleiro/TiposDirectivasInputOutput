@@ -1,0 +1,17 @@
+<h1 class="mat-headline-3">Componente FundamentosTs</h1>
+
+<div class="formulario">
+  <h2>Ejemplo de aplicación de unión de tipos</h2>
+  <button [ngStyle]="{'background-color': color}">El color de este botón se aplica desde el component.ts y su color está determinado por un
+    tipo</button>
+</div>
+
+<div class="formulario">
+  <h2>Ejemplo de uso de enumeraciones </h2>
+  <div class="field">
+    <label for="day">Introduce un número y te diré que día de la semana es:</label>
+    <input type="number" id="day" [(ngModel)]="day" />
+  </div>
+  <button (click)="checkDay()">Comprobar día</button>
+  <h2 class="resultado">{{message}}</h2>
+</div>

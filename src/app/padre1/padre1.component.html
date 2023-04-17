@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="mat-headline-3">Comunicación Hijo -> Padre</h1>
+
+  <app-hijo1 (sendPerson)="addPerson($event)"></app-hijo1>
+
+  <br>
+  <h2 class="mat-headline-4">Padre</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of pacientes">
+        <td>{{person.id}}</td>
+        <td>{{person.name}}</td>
+        <td>{{person.surname}}</td>
+        <td>{{person.dni}}</td>
+        <td>{{person.phone}}</td>
+        <td>{{person.address}}</td>
+        <td>{{person.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

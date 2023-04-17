@@ -1,0 +1,55 @@
+<h1 class="mat-headline-3">Componente Directivas</h1>
+
+<div class="formulario">
+  <h2>Ejemplo ngIf y ng-template</h2>
+  <div class="field">
+    <label for="nota">Introduce una nota para saber si estás aprobado:</label>
+    <input type="number" id="nota" min="0" max="10" [(ngModel)]="nota" (change)="0"/>
+  </div>
+  <div class="resultado" *ngIf="nota>4 else suspenso">
+    <h2>Aprobado</h2>
+  </div>
+  <ng-template #suspenso>
+    <div class="resultado">
+      <h2>Suspenso</h2>
+    </div>
+  </ng-template>
+</div>
+
+
+<div class="formulario">
+  <h2>Ejemplo ngFor</h2>
+  <div class="field">
+    <label for="product">Lista de la compra, añade los productos que quieras:</label>
+    <input type="text" id="product" [(ngModel)]="product"/>
+  </div>
+  <button (click)="addProduct()">Añadir producto</button>
+  <div class="lista" *ngIf="products.length>0">
+    <h3>Lista</h3>
+    <ul>
+      <li *ngFor="let product of products">
+        {{product}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="formulario">
+  <h2>Ejemplo ngSwitch</h2>
+  <div class="field">
+    <label for="day">Introduce un número y te diré el día:</label>
+    <input type="number" id="day" [(ngModel)]="day" (change)="0"/>
+  </div>
+
+  <div class="resultado" [ngSwitch]="day">
+    <h2 *ngSwitchCase="1">Lunes</h2>
+    <h2 *ngSwitchCase="2">Martes</h2>
+    <h2 *ngSwitchCase="3">Miércoles</h2>
+    <h2 *ngSwitchCase="4">Jueves</h2>
+    <h2 *ngSwitchCase="5">Viernes</h2>
+    <h2 *ngSwitchCase="6">Sábado</h2>
+    <h2 *ngSwitchCase="7">Domingo</h2>
+    <h2 *ngSwitchDefault>Introduce un número válido</h2>
+  </div>
+
+</div>

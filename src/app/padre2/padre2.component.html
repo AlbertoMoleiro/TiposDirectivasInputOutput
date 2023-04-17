@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="mat-headline-3">Comunicación Padre -> Hijo</h1>
+  <div class="modal" *ngIf="showModal">
+    <div class="formulario">
+      <h2 class="mat-headline-5">Padre</h2>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre:</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido:</mat-label>
+        <input matInput [(ngModel)]="surname">
+      </mat-form-field><mat-form-field class="example-full-width">
+        <mat-label>Dni:</mat-label>
+        <input matInput [(ngModel)]="dni">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Foto:</mat-label>
+        <input matInput [(ngModel)]="photo">
+      </mat-form-field>
+      <img [src]="photo" alt="imagen de perfil" >
+      <button (click)="addDoctor()" mat-raised-button color="primary">Aceptar</button>
+      <button (click)="rejectDoctor()" mat-raised-button color="accent">Cancelar</button>
+    </div>
+  </div>
+  <button (click)="showForm()" mat-raised-button color="primary">Añadir Médico</button>
+  <br>
+  
+  <app-hijo2 [doctors]="doctors"></app-hijo2>
+</div>

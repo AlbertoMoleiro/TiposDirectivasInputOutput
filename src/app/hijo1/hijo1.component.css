@@ -1,0 +1,20 @@
+.formulario{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.example-full-width {
+  width: 100%;
+  margin: 1rem 0;
+  overflow: visible;
+}
+button{
+  margin: .5rem 0;
+}
+.container{
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+  background-color: rgb(242, 225, 187);
+}
